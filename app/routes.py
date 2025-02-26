@@ -1,5 +1,8 @@
 from app import app
+from flask import render_template
 
 @app.route('/')
-def undex():
-    return "Hello world!"
+@app.route('/index')
+def index():
+    user = {'username': 'Sergey'}
+    return render_template('index.html', title='Home', user=user['username'])
